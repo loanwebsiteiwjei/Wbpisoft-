@@ -1,77 +1,153 @@
-<html>
- <head>
-  <title>
-   Login Page
-  </title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Dashboard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
-   body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://placehold.co/720x1600') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        .login-container img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .login-container input[type="email"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
-        }
-        .login-container .sign-in {
-            background-color: #007bff;
-        }
-        .login-container .register {
-            background-color: #00bcd4;
-        }
-        .login-container a {
-            color: #007bff;
-            text-decoration: none;
-            display: block;
-            margin-top: 10px;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('https://placehold.co/720x1600') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .container {
+      width: 100%;
+      display: none;
+    }
+    .login-container, .dashboard-container {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Login Styles */
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+    }
+    .login-container .sign-in {
+      background-color: #007bff;
+    }
+    .login-container .register {
+      background-color: #00bcd4;
+    }
+    .login-container a {
+      color: #007bff;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
+
+    /* Dashboard Styles */
+    .dashboard-container {
+      display: none;
+      background: #f1f1f1;
+      padding: 20px;
+      text-align: left;
+    }
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      background-color: #333;
+    }
+    .menu li {
+      padding: 8px;
+      text-align: center;
+      background-color: #444;
+      margin-bottom: 2px;
+    }
+    .menu li:hover {
+      background-color: #555;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
   </style>
- </head>
- <body>
-  <div class="login-container">
-   <img alt="Logo with text 'WIFI NG BAYAN VENDO SYSTEM'" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-LmQ09WWGIGwOeeA4ArnRw0x5/user-uJPET5fjNenSso8wCETWVNOp/img-0V9tN3tO3AKna8RAkcHjN6wn.png?st=2024-09-22T05%3A47%3A48Z&amp;se=2024-09-22T07%3A47%3A48Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-21T23%3A24%3A58Z&amp;ske=2024-09-22T23%3A24%3A58Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=eYmU7qN4poSi8GSAMXmhuR8fwY7mHjXTH1bP41hsS1I%3D" width="300"/>
-   <input placeholder="Email" type="email"/>
-   <input placeholder="Password" type="password"/>
-   <button class="sign-in">
-    Sign In
-   </button>
-   <button class="register">
-    Register
-   </button>
-   <a href="#">
-    Forgot Password?
-   </a>
+</head>
+<body>
+
+  <!-- Login Container -->
+  <div class="container" id="login-container">
+    <div class="login-container">
+      <img src="https://placehold.co/300x100" alt="Logo" />
+      <input type="email" placeholder="Email" id="email"/>
+      <input type="password" placeholder="Password" id="password"/>
+      <button class="sign-in" onclick="login()">Sign In</button>
+      <button class="register">Register</button>
+      <a href="#">Forgot Password?</a>
+    </div>
   </div>
- </body>
+
+  <!-- Dashboard Container -->
+  <div class="container" id="dashboard-container">
+    <div class="dashboard-container">
+      <h2>Dashboard</h2>
+      <ul class="menu">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">V5 Updates</a></li>
+        <li><a href="#">WB Wallet Load</a></li>
+        <li><a href="#">License</a></li>
+        <li><a href="#">Transfer Points</a></li>
+        <li><a href="#">Added Points</a></li>
+        <li><a href="#">John Story</a></li>
+        <li><a href="#">Change Password</a></li>
+        <li><a href="#">Admin WB Lite</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Show login container on load
+    document.getElementById("login-container").style.display = "block";
+
+    // Function to handle login
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Basic check (you can add more complex validation)
+      if (email === "admin" && password === "password") {
+        // Hide login and show dashboard
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("dashboard-container").style.display = "block";
+      } else {
+        alert("Invalid email or password. Try admin/password.");
+      }
+    }
+
+    // Function to handle logout
+    function logout() {
+      // Hide dashboard and show login
+      document.getElementById("dashboard-container").style.display = "none";
+      document.getElementById("login-container").style.display = "block";
+    }
+  </script>
+
+</body>
 </html>
