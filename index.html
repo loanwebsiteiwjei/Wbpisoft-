@@ -1,50 +1,77 @@
+<html>
+ <head>
+  <title>
+   Login Page
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://placehold.co/720x1600') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .event .description {
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .login-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            color: white;
             font-size: 16px;
         }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <i class="fas fa-bars menu-icon"></i>
-        <div class="id-info">ID: 12028 &nbsp; Point: 0</div>
-    </div>
-    <div class="container">
-        <h1>Dashboard</h1>
-        <div class="card">
-            <i class="fas fa-user"></i>
-            <div class="info">
-                <div class="title">John Story</div>
-                <div class="value">castillanojomer21@gmail.com</div>
-            </div>
-        </div>
-        <div class="card">
-            <i class="fas fa-money-bill-alt"></i>
-            <div class="info">
-                <div class="title">Total Points</div>
-                <div class="value">0</div>
-            </div>
-        </div>
-        <div class="card">
-            <i class="fas fa-lock-open"></i>
-            <div class="info">
-                <div class="title">License Unused</div>
-                <div class="value">0</div>
-            </div>
-        </div>
-        <div class="card">
-            <i class="fas fa-lock"></i>
-            <div class="info">
-                <div class="title">License Used</div>
-                <div class="value">0</div>
-            </div>
-        </div>
-        <div class="event">
-            <div class="title">Event</div>
-            <div class="description">
-                You transferred the License CAAC5B86E52D4A54A429E12E3F3A645E to Jheff Dorado (Jheffer1994@yahoo.com)
-            </div>
-        </div>
-    </div>
-</body>
+        .login-container .sign-in {
+            background-color: #007bff;
+        }
+        .login-container .register {
+            background-color: #00bcd4;
+        }
+        .login-container a {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="login-container">
+   <img alt="Logo with text 'WIFI NG BAYAN VENDO SYSTEM'" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-LmQ09WWGIGwOeeA4ArnRw0x5/user-uJPET5fjNenSso8wCETWVNOp/img-0V9tN3tO3AKna8RAkcHjN6wn.png?st=2024-09-22T05%3A47%3A48Z&amp;se=2024-09-22T07%3A47%3A48Z&amp;sp=r&amp;sv=2024-08-04&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-09-21T23%3A24%3A58Z&amp;ske=2024-09-22T23%3A24%3A58Z&amp;sks=b&amp;skv=2024-08-04&amp;sig=eYmU7qN4poSi8GSAMXmhuR8fwY7mHjXTH1bP41hsS1I%3D" width="300"/>
+   <input placeholder="Email" type="email"/>
+   <input placeholder="Password" type="password"/>
+   <button class="sign-in">
+    Sign In
+   </button>
+   <button class="register">
+    Register
+   </button>
+   <a href="#">
+    Forgot Password?
+   </a>
+  </div>
+ </body>
 </html>
